@@ -1,0 +1,136 @@
+*{
+   margin:0;padding:0;
+}
+a{
+    text-decoration: none;
+}
+.full{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.box(@dir:vertical){
+    display: -webkit-box;
+    -webkit-box-orient:@dir;
+    -webkit-box-flex:1;
+}
+.pos(r){
+    position: relative;
+}
+.pos(a){
+    position:absolute;
+}
+html,body,.container{
+    .full;
+    .box;
+}
+
+
+header{
+    width:100%;
+    height: 50px;
+    background: #900;
+    text-align: center;
+    line-height: 50px;
+    .pos(r);
+    label{
+        font-size:24px;
+        color:#fff;
+    }
+    #search{
+        background: url("../img/search.png") no-repeat;
+        width:30px;
+        height:30px;
+        .pos(a);
+        right:10px;
+        top:10px;
+    }
+}
+
+section{
+   .full;
+   .box;
+   .pos(r);
+    &>div{
+        background: pink;
+        .pos(a);
+        .full;
+        transform: translate3d(100%,0,0);
+        &:nth-child(1){
+            transform: translate3d(0,0,0);
+        }
+    }
+     
+}
+
+ #home{
+    
+    a{
+        .box;
+        -webkit-box-pack:center;
+        -webkit-box-align: center;
+        margin:10px auto;
+            img{
+                width:290px;
+                height:auto;
+            }
+    }
+        
+}
+    
+
+footer{
+    width:100%;
+    height: 50px;
+    background: #222;
+    .pos(r);
+    nav{
+        .full;
+        .box(@dir:horizontal);
+        a{
+            z-index: 2;
+            .pos(r);
+            .full;
+            .box;
+            color:#fff;
+            font-size:14px;
+            text-align: center;
+            -webkit-box-pack:center;
+            -webkit-box-align: center;
+            
+        }
+    }
+    .mark{
+        width:25%;
+        height:50px;
+        .pos(a);
+        left:0;
+        top:0;
+        box-shadow: 0 2px 8px #fff;
+        background: #000;
+        z-index: 1;
+    }
+}
+
+
+//进入列表页面
+#iscroll_r a{
+    
+    display: inline-block;
+    width:100%;
+    border-bottom:1px dashed #000;
+    
+    dl{
+        
+        dt{
+            float:left;
+            padding:10px 10px;
+        }
+        dd{
+            float:left;
+            color:#222222;
+            padding:30px 30px;
+        }
+        
+    }
+}
